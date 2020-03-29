@@ -8,4 +8,9 @@ const fs = require('fs');
     //The location (url)
     const url = 'https://aqicn.org/city/usa/newyork/';
 
+    //create browser
+    const browser = await puppeteer.launch({
+        headless: true
+    });
+
 })();
