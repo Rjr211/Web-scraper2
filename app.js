@@ -11,6 +11,13 @@ const fs = require('fs');
     //create browser
     const browser = await puppeteer.launch({
         headless: true
+        //set headless to false for debugging so you can see browser *
     });
 
+    //Navigate to website
+    const page = await browser.newPage();
+    await page.goto(url, {waitUntil: "load" });
+
+    //Get the Air quality index
+    const aqi = await page.$('aqiwgtvalue');
 })();
